@@ -4,6 +4,17 @@ description: Writes and maintains a project thoughts narrative that captures wha
 license: MIT
 ---
 
+```text
+                             :.                     ..                              ..      
+ *###%@@#### @@:   -@@  .@@@##@@=  +@%    %@+  -@@%##@@- +@%    %@+ ####@@####  @@@##%@@   
+     +@@     @@:   -@@  @@-    @@+ +@%    %@+ *@%        +@%    %@+     @@     :@@         
+     +@@     @@@@@@@@@ .@@     #@% +@%    %@+ @@   ::::. +@@@@@@@@+     @@      =@@@@-     
+     +@@     @@:   -@@ .@@     #@% +@%    %@+ @@.  =**@* +@%    %@+     @@         .=@@@   
+     +@@     @@:   -@@  @@+   .@@. +@@    @@. *@@    .@* +@%    %@+     @@      :     *@@  
+     +@@     @@:   -@@   *@@@@@@.   #@@@@@@:   .@@@@@@@+ +@%    %@+     @@     =@@@@@@@*   
+                                                                                           
+ ```
+
 # Thoughts skill
 
 Write and maintain a project thoughts narrative that captures what changed, why, what worked, what failed (with exact errors and commands), what was tricky, and how to review and validate.

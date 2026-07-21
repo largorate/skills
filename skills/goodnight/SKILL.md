@@ -16,6 +16,17 @@ Treat either of these as an explicit arm-and-run trigger:
 2. Prompt containing the intent phrase, for example:
    - `Good night my love. I'm going to bed now. When you are done with your tasks and all is working, please commit, push and run shutdown /h in terminal.`
 
+## Permission gate (mandatory)
+
+Before accepting the task, ask explicitly for permission to arm Goodnight mode.
+
+Use direct wording such as:
+
+> I can run your Goodnight flow (finish tasks, commit, push, then hibernate/shutdown). Do you want me to arm this now?
+
+Only proceed when the user explicitly confirms (for example: "yes", "arm goodnight", or equivalent clear consent).
+If permission is not explicit, do not accept or execute the Goodnight flow.
+
 ## Core behavior
 
 Once armed, continue working until the active tasks are complete and in good condition, then run this sequence:
@@ -50,3 +61,13 @@ When using fallback, report that hibernate failed and that timed shutdown was us
 1. Do not run power commands before commit and push succeed.
 2. Do not run power commands if there are unresolved errors in the requested work.
 3. If commit or push fails, report exact command and error, then stop before power actions.
+
+## Optional goodnight ceremony
+
+After explicit permission and before power-off, offer one optional comfort step:
+
+1. Short bedtime story (3-6 lines, calm and friendly).
+2. "Tuck-in" message (brief reassuring sign-off).
+3. Soft completion summary ("Everything is saved and pushed; sleep well").
+
+Ceremony is optional and must never block the core completion flow.

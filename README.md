@@ -28,6 +28,17 @@ High-velocity delivery with a cat-harness workflow:
 
 Use this skill when you want fast execution with controlled history cleanup at the end.
 
+### goodnight
+
+Late-night wrap-up automation:
+
+- finishes remaining work
+- commits and pushes final changes
+- hibernates Windows at the end (`shutdown /h`)
+- falls back to timed shutdown when hibernate is unavailable
+
+Use this skill when you want the agent to complete and close down your machine after final success.
+
 ## Installation
 
 Install all skills from this repository:
@@ -54,10 +65,18 @@ Install only the `yolocat` skill:
 npx skills add largorate/skills --skill yolocat
 ```
 
+Install only the `goodnight` skill:
+
+```bash
+npx skills add largorate/skills --skill goodnight
+```
+
 ## Repository layout
 
 ```text
 skills/
+├── goodnight/
+│   └── SKILL.md
 ├── thoughts/
 │   └── SKILL.md
 └── yolocat/

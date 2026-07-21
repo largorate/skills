@@ -112,3 +112,37 @@ Keeping command-trigger convenience while still preserving mandatory confirmatio
 
 ### Future work
 - Optionally add aliases (for example `/push`) if you want shorter command variants.
+
+## Step 4: Fixing yolocat discovery parse error
+**Author:** main
+
+### Prompt Context
+**Verbatim prompt:** /yolocat-push
+**Interpretation:** Investigate discovery/runtime flow after user could not install `yolocat`.
+**Inferred intent:** Ensure `yolocat` is discoverable via `npx skills add ... --skill yolocat`.
+
+### What I did
+- Reproduced listing behavior locally: only `thoughts` was discovered.
+- Inspected `skills` CLI parsing behavior and identified YAML frontmatter parse failure conditions.
+- Fixed `/skills/yolocat/SKILL.md` by quoting the `description` value containing `:`.
+
+### Why
+Unquoted YAML scalar values cannot safely contain `:` followed by a space; that broke frontmatter parsing and caused the skill to be skipped.
+
+### What worked
+- After quoting the description string, discovery includes both skills.
+
+### What didn't work
+No failures occurred in this step.
+
+### What I learned
+skills CLI silently drops a skill when frontmatter parse fails; explicit YAML-safe quoting prevents this class of issue.
+
+### What was tricky
+The CLI output reports only discovered skills, not why a sibling skill was rejected, so root-cause required source inspection.
+
+### What warrants review
+- Confirm the quoted description wording remains the preferred text.
+
+### Future work
+- Add a lightweight pre-push frontmatter validation step for all `SKILL.md` files.

@@ -1,6 +1,6 @@
 ---
 name: yolocat
-description: Executes high-velocity implementation with cat-like resilience (9 lives): commit after each completed prompt, keep a commit-id ledger, avoid pushing until explicitly approved, and finish with a user-confirmed squash-and-push.
+description: "Executes high-velocity implementation with cat-like resilience (9 lives): commit after each completed prompt, keep a commit-id ledger, avoid pushing until explicitly approved, and finish with a user-confirmed squash-and-push."
 license: MIT
 ---
 

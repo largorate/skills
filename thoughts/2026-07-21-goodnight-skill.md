@@ -79,3 +79,40 @@ Keeping ceremony features fun without weakening safety constraints required expl
 
 ### Future work
 - Optionally add a configurable ceremony preference (story/tuck-in/none).
+
+## Step 3: Refining slash-vs-text arming and in-task confirm behavior
+**Author:** main
+
+### Prompt Context
+**Verbatim prompt:** If /goodnight is used directly, there is no need to ask for confirmation to arm the goodnight skill. If I only write goodnight or something simular, then please ask for confirmation.
+
+If you receive the prompt during an exsisting task, please just write a confirm.
+**Interpretation:** Make `/goodnight` auto-arm, keep confirmation for natural-language goodnight prompts, and define deterministic reply for interrupts during active work.
+**Inferred intent:** Remove unnecessary friction for explicit command use while preserving safety for ambiguous phrasing.
+
+### What I did
+- Updated `/skills/goodnight/SKILL.md` trigger rules to differentiate `/goodnight` from non-slash goodnight text.
+- Defined that `/goodnight` is implicit explicit permission and skips extra arming confirmation.
+- Kept mandatory confirmation requirement for non-slash goodnight prompts.
+- Added in-task interrupt behavior: respond exactly `confirm`, continue current task, then run Goodnight completion flow at the end.
+
+### Why
+The slash command is already an explicit control action, while free-text intent can be ambiguous and still benefits from confirmation.
+
+### What worked
+- Small targeted updates captured all requested behavioral differences without changing core safety flow.
+
+### What didn't work
+No failures occurred in this step.
+
+### What I learned
+Separating trigger classes (command vs natural language) gives both speed and safety.
+
+### What was tricky
+The interrupt behavior needed precise wording so "confirm" acts as an acknowledgment, not task abandonment.
+
+### What warrants review
+- Confirm whether `confirm` should always be lowercase exactly as specified.
+
+### Future work
+- Optionally add a configurable interrupt acknowledgment phrase if you later want alternatives.

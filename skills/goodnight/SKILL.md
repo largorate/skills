@@ -10,15 +10,18 @@ Goodnight is a "work late" completion skill for when the user is going to bed an
 
 ## Trigger
 
-Treat either of these as an explicit arm-and-run trigger:
+Treat these triggers differently:
 
 1. Slash command: `/goodnight`
-2. Prompt containing the intent phrase, for example:
+   - This is already explicit permission. Arm immediately.
+   - Do not ask an extra permission question.
+2. Prompt containing "goodnight" intent (without slash), for example:
    - `Good night my love. I'm going to bed now. When you are done with your tasks and all is working, please commit, push and run shutdown /h in terminal.`
+   - Ask for explicit confirmation before arming.
 
 ## Permission gate (mandatory)
 
-Before accepting the task, ask explicitly for permission to arm Goodnight mode.
+Before accepting the task from non-slash prompts, ask explicitly for permission to arm Goodnight mode.
 
 Use direct wording such as:
 
@@ -26,6 +29,16 @@ Use direct wording such as:
 
 Only proceed when the user explicitly confirms (for example: "yes", "arm goodnight", or equivalent clear consent).
 If permission is not explicit, do not accept or execute the Goodnight flow.
+
+For direct `/goodnight`, this gate is already satisfied by the slash command itself.
+
+## In-task interrupt behavior
+
+If a goodnight trigger arrives while an existing task is already in progress:
+
+1. Reply with exactly: `confirm`
+2. Keep the existing task context and continue to completion.
+3. Run Goodnight completion actions at the end of that task.
 
 ## Core behavior
 

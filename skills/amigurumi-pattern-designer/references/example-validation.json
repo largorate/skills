@@ -1,0 +1,32 @@
+{
+  "parts": [
+    {
+      "name": "Head",
+      "initial_stitches": 0,
+      "rounds": [
+        {"label": "R1", "ops": [{"type": "mr", "count": 6}], "expected": 6},
+        {"label": "R2", "ops": [{"repeat": 6, "sequence": [{"type": "inc"}]}], "expected": 12},
+        {"label": "R3", "ops": [{"repeat": 6, "sequence": [{"type": "sc"}, {"type": "inc"}]}], "expected": 18},
+        {"label": "R4", "ops": [{"type": "sc", "count": 18}], "expected": 18},
+        {"label": "R5", "ops": [{"repeat": 6, "sequence": [{"type": "sc"}, {"type": "dec"}]}], "expected": 12}
+      ]
+    },
+    {
+      "name": "Arm",
+      "initial_stitches": 0,
+      "rounds": [
+        {"label": "R1", "ops": [{"type": "mr", "count": 6}], "expected": 6},
+        {"label": "R2", "ops": [{"type": "sc", "count": 6}], "expected": 6}
+      ]
+    },
+    {
+      "name": "Arm Copy",
+      "initial_stitches": 0,
+      "rounds": [
+        {"label": "R1", "ops": [{"type": "mr", "count": 6}], "expected": 6},
+        {"label": "R2", "ops": [{"type": "sc", "count": 6}], "expected": 6}
+      ]
+    }
+  ],
+  "symmetry_groups": [["Arm", "Arm Copy"]]
+}

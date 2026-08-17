@@ -6,6 +6,16 @@ Public Agent Skills repository for use with [skills.sh](https://skills.sh).
 
 ## Available skills
 
+### amigurumi-pattern-designer
+
+Designs, validates, revises, scales, and localizes original crochet amigurumi patterns:
+
+- calculates and validates round-by-round stitch counts
+- plans shaping, symmetry, assembly, color changes, and placement
+- supports US English, UK English, and Danish crochet terminology
+
+Use this skill when you need a technically coherent plush crochet pattern or want to audit an existing one.
+
 ### thoughts
 
 Creates and maintains project thought narratives that capture:
@@ -71,10 +81,21 @@ Install only the `goodnight` skill:
 npx skills add largorate/skills --skill goodnight
 ```
 
+Install only the `amigurumi-pattern-designer` skill:
+
+```bash
+npx skills add largorate/skills --skill amigurumi-pattern-designer
+```
+
 ## Repository layout
 
 ```text
 skills/
+├── amigurumi-pattern-designer/
+│   ├── agents/
+│   ├── references/
+│   ├── scripts/
+│   └── SKILL.md
 ├── goodnight/
 │   └── SKILL.md
 ├── thoughts/

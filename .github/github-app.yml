@@ -1,0 +1,8 @@
+instructions: |
+  Work directly in the existing local checkout on the branch currently checked out.
+  Do not create worktrees, create or switch branches, or otherwise change the
+  repository's checkout strategy unless the user explicitly requests it.
+
+automation:
+  auto_issue_session: true
+  remote_control: false

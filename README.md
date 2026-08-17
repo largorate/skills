@@ -49,6 +49,17 @@ Late-night wrap-up automation:
 
 Use this skill when you want the agent to complete and close down your machine after final success.
 
+### openscad-model-engineer
+
+Creates, revises, debugs, reviews, and prepares generic OpenSCAD models for reliable preview, STL export, and 3D printing:
+
+- structures models with clear parameters, derived values, modules, assemblies, and export routes
+- makes CSG operations robust with deliberate overlaps and extended cutters
+- designs printable interfaces, tolerances, joints, orientations, and split assemblies
+- validates source, OpenSCAD render/export output, and delivery readiness without overstating results
+
+Use this skill whenever an agent needs to create or modify a `.scad` model from a concept, dimensions, sketch, reference image, or an existing draft.
+
 ## Installation
 
 Install all skills from this repository:
@@ -87,6 +98,12 @@ Install only the `amigurumi-pattern-designer` skill:
 npx skills add largorate/skills --skill amigurumi-pattern-designer
 ```
 
+Install only the `openscad-model-engineer` skill:
+
+```bash
+npx skills add largorate/skills --skill openscad-model-engineer
+```
+
 ## Repository layout
 
 ```text
@@ -97,6 +114,9 @@ skills/
 │   ├── scripts/
 │   └── SKILL.md
 ├── goodnight/
+│   └── SKILL.md
+├── openscad-model-engineer/
+│   ├── references/
 │   └── SKILL.md
 ├── thoughts/
 │   └── SKILL.md

@@ -165,7 +165,7 @@ Use this skill when shipping code quickly while still keeping safe rollback poin
 ## Core behavior
 
 1. Always complete the implementation task directly.
-2. When a prompt is done and the repo is in good condition, create a local commit.
+2. When a prompt is done and the repo is in good condition, always create a local commit without asking for permission.
 3. Never push that per-prompt commit immediately.
 4. Maintain a running list of commit IDs for this workstream.
 5. When the work appears finished and stable, ask the user if they are ready for squash and push.

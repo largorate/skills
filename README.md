@@ -49,6 +49,17 @@ Late-night wrap-up automation:
 
 Use this skill when you want the agent to complete and close down your machine after final success.
 
+### session-cleaner
+
+Audits Git work across configured projects and agent sessions, with read-only behavior by default:
+
+- accounts for shared checkouts, all local branches, stashes, and live remote history
+- checks the entire unpublished history before any authorized publication
+- coordinates explicitly requested commits, ordinary pushes, then safe pulls without switching shared branches
+- preserves unrelated edits, sensitive local history, and stashes while reporting incomplete or blocked synchronization
+
+Use this skill to check whether session/repository work is committed and pushed, or to carry out explicitly authorized cross-repository synchronization. It does not delete or archive sessions.
+
 ### openscad-model-engineer
 
 Creates, revises, debugs, reviews, and prepares generic OpenSCAD models for reliable preview, STL export, and 3D printing:
@@ -104,6 +115,24 @@ Install only the `openscad-model-engineer` skill:
 npx skills add largorate/skills --skill openscad-model-engineer
 ```
 
+Install only the `session-cleaner` skill:
+
+```bash
+npx skills add largorate/skills --skill session-cleaner
+```
+
+Install `session-cleaner` globally for GitHub Copilot:
+
+```bash
+npx skills add largorate/skills --skill session-cleaner --global --agent github-copilot
+```
+
+From an existing local checkout, install the current version globally without waiting for publication:
+
+```powershell
+npx skills add . --skill session-cleaner --global --agent github-copilot --yes
+```
+
 ## Repository layout
 
 ```text
@@ -117,6 +146,8 @@ skills/
 │   └── SKILL.md
 ├── openscad-model-engineer/
 │   ├── references/
+│   └── SKILL.md
+├── session-cleaner/
 │   └── SKILL.md
 ├── thoughts/
 │   └── SKILL.md
